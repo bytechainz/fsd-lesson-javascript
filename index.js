@@ -214,6 +214,13 @@ const deleteAllData = () => {
     dataTodoList = []
 }
 
+const editData = (index, data) => {
+    dataTodoList[index] = {
+        ...dataTodoList[index],
+        ...data
+    }
+}
+
 addTodoList('cuci motor')
 console.log(dataTodoList)
 
@@ -229,8 +236,8 @@ console.log(dataTodoList)
 addTodoList('cuci sepeda brompton')
 console.log(dataTodoList)
 
-
-
+editData(1, {status : "inprogress"})
+console.log(dataTodoList)
 
 
 
