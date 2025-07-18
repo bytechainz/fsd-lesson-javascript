@@ -44,124 +44,190 @@
 //     console.log('hello world')
 // }
 
-const funcVoid = () => {
-    console.log('haha')
-}
+// const funcVoid = () => {
+//     console.log('haha')
+// }
 
-const funcReturn = () => {
-    return 'hello world'
-}
+// const funcReturn = () => {
+//     return 'hello world'
+// }
 
-console.log('void', funcVoid())
-console.log('return', funcReturn())
+// console.log('void', funcVoid())
+// console.log('return', funcReturn())
 
-const luasTanah = (panjang, lebar) => {
-    console.log('ini func void', panjang * lebar)
-}
+// const luasTanah = (panjang, lebar) => {
+//     console.log('ini func void', panjang * lebar)
+// }
 
-luasTanah(10, 2)
+// luasTanah(10, 2)
 
-const resultLuasTanah = (panjang, lebar) => {
-    console.log('ini func return')
-    return panjang * lebar
-}
+// const resultLuasTanah = (panjang, lebar) => {
+//     console.log('ini func return')
+//     return panjang * lebar
+// }
 
  
-const totalLuasTanah = resultLuasTanah(10, 2) + resultLuasTanah(20, 2)
-console.log(totalLuasTanah)
+// const totalLuasTanah = resultLuasTanah(10, 2) + resultLuasTanah(20, 2)
+// console.log(totalLuasTanah)
 
 
-const returnFunc = () => {
-    return () => {
-        console.log('inside')
-        return () => {
-        console.log('inside 2')
-    }
-    }
-}
+// const returnFunc = () => {
+//     return () => {
+//         console.log('inside')
+//         return () => {
+//         console.log('inside 2')
+//     }
+//     }
+// }
 
-returnFunc()()()
+// returnFunc()()()
 
-const helloWorld = () => {
-    console.log('hello world')
-}
+// const helloWorld = () => {
+//     console.log('hello world')
+// }
 
-const helloWorldFunc = () => {
-    helloWorld()    
-    helloWorld()
-    helloWorld()
-    helloWorld()
-}
+// const helloWorldFunc = () => {
+//     helloWorld()    
+//     helloWorld()
+//     helloWorld()
+//     helloWorld()
+// }
 
-helloWorldFunc()
+// helloWorldFunc()
 
-// function dengan nilai default
-const callName = (name) => {
-    console.log(name)
-}
+// // function dengan nilai default
+// const callName = (name) => {
+//     console.log(name)
+// }
 
-callName('hi tama')
+// callName('hi tama')
 
-// undefined yakni belum di set nilai/ tidak memiliki nilainya
-// null sudah kita set dengan tidak memiliki nilai
+// // undefined yakni belum di set nilai/ tidak memiliki nilainya
+// // null sudah kita set dengan tidak memiliki nilai
 
-// ARRAY
-const array = [true, 200, ['arief','yusron', 'jamal']]
-// array[1] = 400
-console.log(array)
-
-// array.push('yusuf')
+// // ARRAY
+// const array = [true, 200, ['arief','yusron', 'jamal']]
+// // array[1] = 400
 // console.log(array)
 
-// array.unshift('yamal')
-// console.log(array)
+// // array.push('yusuf')
+// // console.log(array)
 
-const newArray = [...array, 'hanif', 'tama']
-console.log(newArray)
+// // array.unshift('yamal')
+// // console.log(array)
 
-console.log(array[2][1])
+// const newArray = [...array, 'hanif', 'tama']
+// console.log(newArray)
 
-let object = {
-    name : "arif didu",
-    age : 18,
-    member : [
+// console.log(array[2][1])
+
+// let object = {
+//     name : "arif didu",
+//     age : 18,
+//     member : [
+//         {
+//             name : 'jamal',
+//             saldo : 100
+//         },
+//         {
+//             name : 'yusuf',
+//             saldo : 200
+//         }
+//     ]
+// }
+
+// object = {
+//     ...object,
+//     kelas : 10,
+//     name : 'hanif0' // ini akan mereplace 
+// }
+
+// console.log(object.kelas)
+
+
+// // console.log(object['age'])
+// // console.log(object.name)
+// // console.log(object.member[0].saldo)
+
+
+// // BUILD IN FUNCTION
+// let name = 'arief yusron'
+// console.log(name.replaceAll('r', '10'))
+
+// // for (let i = 0; i < 10; i = i+2) {
+// //     console.log('loop', i)
+// // }
+
+// const dataArray = [
+//     'arief yusron',
+//     'dani',
+//     'jamal',
+//     'yusuf',
+//     'mamat',
+//     'putri',
+//     'yamal'
+// ]
+
+// // for(let i = 0;i < dataArray.length; i++) {
+// //     console.log(dataArray[i])
+// // }
+
+// // .map mengembalikan nilai array
+// dataArray.map((item, index) => {
+//     console.log(item, index)
+// })
+
+// const resultMap = dataArray.map((item, index) => {
+//     return 'hallo'
+// })
+
+// console.log(resultMap)
+
+// // sama seperti map , tapi tidak mengembalikan nilai
+// // pada data array lebih ideal menggunakan foreach
+// dataArray.forEach((item, index) => {
+//     console.log(item, index)
+// })
+
+let dataTodoList = []
+
+console.log(dataTodoList)
+
+const addTodoList = (desc) => {
+    dataTodoList = [
+        ...dataTodoList,
         {
-            name : 'jamal',
-            saldo : 100
-        },
-        {
-            name : 'yusuf',
-            saldo : 200
+            desc : desc,
+            status: 'todo'
         }
     ]
 }
 
-object = {
-    ...object,
-    kelas : 10,
-    name : 'hanif0' // ini akan mereplace 
+// filter akan mengembalikan nilai sama seperti foreach
+const deleteData = (index) => {
+    dataTodoList = dataTodoList.filter((e, i) => {
+        return i !== index
+    })
 }
 
-console.log(object.kelas)
+const deleteAllData = () => {
+    dataTodoList = []
+}
 
+addTodoList('cuci motor')
+console.log(dataTodoList)
 
-// console.log(object['age'])
-// console.log(object.name)
-// console.log(object.member[0].saldo)
+addTodoList('cuci baju')
+console.log(dataTodoList)
 
+deleteData(0)
+console.log(dataTodoList)
 
-// BUILD IN FUNCTION
-let name = 'arief yusron'
-console.log(name.replaceAll('r', '10'))
+deleteAllData()
+console.log(dataTodoList)
 
-
-
-
-
-
-
-
-
+addTodoList('cuci sepeda brompton')
+console.log(dataTodoList)
 
 
 
