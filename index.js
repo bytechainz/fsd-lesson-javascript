@@ -244,3 +244,14 @@ console.log(dataTodoList)
 
 
 
+const launchPage = () => {
+    const container = document.getElementById("container")
+
+    if (dataTodoList.length !== 0) {
+
+    }
+}
+
+const handleAddTodo = () => {
+    
+}
